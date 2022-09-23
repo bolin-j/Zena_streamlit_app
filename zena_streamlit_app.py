@@ -11,9 +11,9 @@ my_cur = my_cnx.cursor()
 # run a snowflake query and put it all in a var called my_catalog
 my_cur.execute("select color_or_style from catalog_for_website")
 my_catalog = my_cur.fetchall()
-streamlit.write(my_catalog)
+# streamlit.write(my_catalog)
 # put the data into a dataframe
-df = streamlit.dataframe(my_catalog)
+df = pandas.DataFrame(my_catalog)
 
 # put the first column into a list
 color_list = df[0].values.tolist()

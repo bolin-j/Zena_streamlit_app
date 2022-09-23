@@ -2,6 +2,7 @@ import snowflake.connector
 import streamlit
 import pandas
 from PIL import Image
+from io import BytesIO
 
 streamlit.title('Zena\'s Amazing Athleisure Catalog')
 
@@ -31,7 +32,8 @@ df2 = pandas.DataFrame(my_cur.fetchall())
 # streamlit.write(df2)
 
 streamlit.image(
-    Image.open('https://uni-klaus.s3.us-west-2.amazonaws.com/clothing/royal_blue_sweatsuit.png'),
+    Image.open(BytesIO(df2))
+#     Image.open('https://uni-klaus.s3.us-west-2.amazonaws.com/clothing/royal_blue_sweatsuit.png'),
     width = 400,
     caption=product_caption
 )

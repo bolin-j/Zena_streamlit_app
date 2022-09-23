@@ -1,6 +1,7 @@
 import snowflake.connector
 import streamlit
 import pandas
+from PIL import Image
 
 streamlit.title('Zena\'s Amazing Athleisure Catalog')
 
@@ -28,8 +29,9 @@ product_caption = 'Our warm, comfortable, ' + option + 'sweatsuit!'
 my_cur.execute("select direct_url, price, size_list, upsell_product_desc from catalog_for_website where color_or_style ='" + option + "';")
 df2 = pandas.DataFrame(my_cur.fetchall())
 streamlit.write(df2)
+
 streamlit.image(
-    df2[0],
+    Image.open(df2[0]),
     width = 400,
     caption=product_caption
 )

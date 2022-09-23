@@ -2,7 +2,7 @@ import snowflake.connector
 import streamlit
 import pandas
 from PIL import Image
-import urllib.request.urlopen as urlopen
+from urllib.request import urlopen as urlopen
 
 streamlit.title('Zena\'s Amazing Athleisure Catalog')
 

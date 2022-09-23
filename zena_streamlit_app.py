@@ -32,7 +32,7 @@ df2 = pandas.DataFrame(my_cur.fetchall())
 # streamlit.write(df2)
 
 streamlit.image(
-    Image.open(urlopen('https://uni-klaus.s3.us-west-2.amazonaws.com/clothing/royal_blue_sweatsuit.png')),
+    Image.open(urlopen(df2[0][0])),
 #     Image.open('https://uni-klaus.s3.us-west-2.amazonaws.com/clothing/royal_blue_sweatsuit.png'),
     width = 400,
     caption=product_caption

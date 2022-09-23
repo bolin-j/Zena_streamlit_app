@@ -28,10 +28,10 @@ product_caption = 'Our warm, comfortable, ' + option + 'sweatsuit!'
 my_cur.execute("select direct_url, price, size_list, upsell_product_desc from catalog_for_website where color_or_style ='" + option + "';")
 
 streamlit.image(
-    df[0],
+    df[2],
     width = 400,
     caption=product_caption
 )
 streamlit.write('Price: ', df[1])
-streamlit.write('Sizes Available: ', df[2])
-streamlit.write(df[3])
+streamlit.write('Sizes Available: ', df[3])
+streamlit.write(df[-1])
